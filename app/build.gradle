@@ -7,5 +7,3 @@ version = '1.0'
 archivesBaseName = 'dex'
 sourceCompatibility = JavaVersion.VERSION_1_7
 targetCompatibility = JavaVersion.VERSION_1_7
-
-
