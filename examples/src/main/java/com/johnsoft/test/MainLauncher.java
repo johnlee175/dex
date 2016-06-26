@@ -16,11 +16,70 @@
  */
 package com.johnsoft.test;
 
+import java.io.IOException;
+
 /**
  * @author John Kenrinus Lee
  * @version 2016-06-25
  */
 public class MainLauncher {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+//        Dex dex = new Dex(new File("/Users/baidu/temp/AopTest/app/build/outputs/apk/app-debug/classes.dex"));
+//        for (ClassDef classDef : dex.classDefs()) {
+//            if (classDef.getClassDataOffset() > 0) {
+//                ClassData classData = dex.readClassData(classDef);
+//                ClassData.Method[] methods = classData.allMethods();
+//                for (ClassData.Method method : methods) {
+//                    if (method.getCodeOffset() > 0) {
+//                        Code code = dex.readCode(method);
+//                        short[] instructions = code.getInstructions();
+//                        if (instructions != null) {
+//                            System.out.println(instructions.length);
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        for (String typeName : dex.typeNames()) {
+//            if (typeName.contains("Activity")) {
+//                System.out.println(typeName);
+//            }
+//        }
+
+
+//        DexFileReader reader = new DexFileReader(new File("/Users/baidu/temp/AopTest/app/build/outputs/apk/app-debug/classes.dex"));
+//        DexFileNode dexFileNode = new DexFileNode();
+//        reader.accept(dexFileNode);
+//        for (DexClassNode dexClassNode : dexFileNode.clzs) {
+//            if (dexClassNode.className.contains("MainActivity")) {
+//                System.out.println("class: " + dexClassNode.className);
+//                System.out.println("source: " + dexClassNode.source);
+//                System.out.println("super class: " + dexClassNode.superClass);
+//                System.out.println("interface list: " + Arrays.toString(dexClassNode.interfaceNames));
+//                for (DexMethodNode dexMethodNode : dexClassNode.methods) {
+//                    if ((dexMethodNode.access & ~DexConstants.ACC_PUBLIC) != 0) {
+//                        System.out.print("public ");
+//                    }
+//                    if ((dexMethodNode.access & ~DexConstants.ACC_STATIC) != 0) {
+//                        System.out.print("static ");
+//                    }
+//                    System.out.print(dexMethodNode.method.getReturnType() + " ");
+//                    System.out.print(dexMethodNode.method.getName() + " (");
+//                    System.out.print(Arrays.toString(dexMethodNode.method.getParameterTypes()) + ") ");
+//                    System.out.println();
+//                    int i = 0;
+//                    for (DexStmtNode dexStmtNode : dexMethodNode.codeNode.stmts) {
+//                        if (dexStmtNode.op != null) {
+//                            if (i < 10) {
+//                                System.out.println(dexStmtNode.op.displayName);
+//                                ++i;
+//                            } else {
+//                                break;
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
     }
 }
