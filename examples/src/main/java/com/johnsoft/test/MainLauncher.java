@@ -16,6 +16,7 @@
  */
 package com.johnsoft.test;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -24,7 +25,11 @@ import java.io.IOException;
  */
 public class MainLauncher {
     public static void main(String[] args) throws IOException {
-//        Dex dex = new Dex(new File("/Users/baidu/temp/AopTest/app/build/outputs/apk/app-debug/classes.dex"));
+        int apiLevel = 14;
+        File dexFile = new File("/Users/baidu/temp/AopTest/app/build/outputs/apk/app-debug/classes.dex");
+
+
+//        Dex dex = new Dex(dexFile);
 //        for (ClassDef classDef : dex.classDefs()) {
 //            if (classDef.getClassDataOffset() > 0) {
 //                ClassData classData = dex.readClassData(classDef);
@@ -47,7 +52,7 @@ public class MainLauncher {
 //        }
 
 
-//        DexFileReader reader = new DexFileReader(new File("/Users/baidu/temp/AopTest/app/build/outputs/apk/app-debug/classes.dex"));
+//        DexFileReader reader = new DexFileReader(dexFile);
 //        DexFileNode dexFileNode = new DexFileNode();
 //        reader.accept(dexFileNode);
 //        for (DexClassNode dexClassNode : dexFileNode.clzs) {
@@ -83,11 +88,8 @@ public class MainLauncher {
 //        }
 
 
-//        int apiLevel = 14;
-//        boolean experimental = false;
-//        DexBackedDexFile dexFile = DexFileFactory.loadDexFile(new File
-//                ("/Users/baidu/temp/AopTest/app/build/outputs/apk/app-debug/classes.dex"), apiLevel, experimental);
-//        for (ClassDef classDef: dexFile.getClasses()) {
+//        DexBackedDexFile dexBackedDexFile = DexFileFactory.loadDexFile(dexFile, apiLevel, false);
+//        for (ClassDef classDef: dexBackedDexFile.getClasses()) {
 //            if (classDef.getType().contains("MainActivity")) {
 //                System.out.println(">>> class: " + classDef.getType());
 //                System.out.println(">>> source: " + classDef.getSourceFile());
@@ -121,6 +123,47 @@ public class MainLauncher {
 //                }
 //            }
 //        }
+
+
+//        ApplicationReader applicationReader = new ApplicationReader(apiLevel, dexFile);
+//        ApplicationNode applicationNode = new ApplicationNode(apiLevel);
+//        applicationReader.accept(applicationNode, 0);
+//        for (ClassNode classNode : applicationNode.classes) {
+//            if (classNode.name.contains("MainActivity")) {
+//                System.out.println("$ class: " + classNode.name);
+//                System.out.println("$ source: " + classNode.sourceFile);
+//                System.out.println("$ super class: " + classNode.superName);
+//                System.out.println("$ interface list: " + String.valueOf(classNode.interfaces));
+//                for (MethodNode methodNode : classNode.methods) {
+//                    System.out.print("$ ");
+//                    if ((methodNode.access & ~Opcodes.ACC_PUBLIC) != 0) {
+//                        System.out.print("public ");
+//                    }
+//                    if ((methodNode.access & ~Opcodes.ACC_STATIC) != 0) {
+//                        System.out.print("static ");
+//                    }
+//                    System.out.print("[signature: " + Arrays.toString(methodNode.signature) + "] ");
+//                    System.out.print("[description: " + methodNode.desc + "] ");
+//                    System.out.print(methodNode.name + " (");
+//                    System.out.print(Arrays.toString(methodNode.parameters) + ") ");
+//                    System.out.println();
+//                    InsnList instructions = methodNode.instructions;
+//                    for (int i = 0; i < instructions.size(); ++i) {
+//                        AbstractInsnNode insnNode = instructions.get(i);
+//                        for (Op op : Op.values()) {
+//                            if (op.opcode == insnNode.getOpcode()) {
+//                                System.out.println("$ " + op.displayName);
+//                                break;
+//                            }
+//                        }
+//                        if (i > 10) {
+//                            break;
+//                        }
+//                    }
+//                }
+//            }
+//        }
+
 
     }
 }
