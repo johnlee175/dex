@@ -81,5 +81,46 @@ public class MainLauncher {
 //                }
 //            }
 //        }
+
+
+//        int apiLevel = 14;
+//        boolean experimental = false;
+//        DexBackedDexFile dexFile = DexFileFactory.loadDexFile(new File
+//                ("/Users/baidu/temp/AopTest/app/build/outputs/apk/app-debug/classes.dex"), apiLevel, experimental);
+//        for (ClassDef classDef: dexFile.getClasses()) {
+//            if (classDef.getType().contains("MainActivity")) {
+//                System.out.println(">>> class: " + classDef.getType());
+//                System.out.println(">>> source: " + classDef.getSourceFile());
+//                System.out.println(">>> super class: " + classDef.getSuperclass());
+//                System.out.println(">>> interface list: " + String.valueOf(classDef.getInterfaces()));
+//                for (Method method : classDef.getMethods()) {
+//                    System.out.print(">>> ");
+//                    if ((method.getAccessFlags() & ~DexConstants.ACC_PUBLIC) != 0) {
+//                        System.out.print("public ");
+//                    }
+//                    if ((method.getAccessFlags() & ~DexConstants.ACC_STATIC) != 0) {
+//                        System.out.print("static ");
+//                    }
+//                    System.out.print(method.getReturnType() + " ");
+//                    System.out.print(method.getName() + " (");
+//                    for (MethodParameter parameter : method.getParameters()) {
+//                        System.out.print(parameter.getType() + " " + parameter.getName() + ", ");
+//                    }
+//                    System.out.println(") ");
+//                    int i = 0;
+//                    for (Instruction instruction: method.getImplementation().getInstructions()) {
+//                        if (instruction.getOpcode() != null) {
+//                            if (i < 10) {
+//                                System.out.println(">>> " + instruction.getOpcode().name);
+//                                ++i;
+//                            } else {
+//                                break;
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+
     }
 }
